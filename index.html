@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arc Wallet - Privacy You Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              arc: {
+                bg: '#091325',
+                bgDeep: '#0E233E',
+                base: '#09121D', // Base dark from structure
+                primary: '#a0bce4',
+                accent: '#3A8DFF',
+                surface: '#151A22',
+                input: '#1e2125',
+                text: {
+                  main: '#E6EEF3',
+                  secondary: '#A7B4C8',
+                },
+                border: '#2b3036',
+                borderStrong: '#2B3440',
+                divider: 'rgba(209, 220, 232, 0.1)',
+                success: '#22c55e',
+              }
+            },
+            animation: {
+              'float-up': 'floatUp 25s linear infinite',
+              'keyhole': 'keyhole-sequence 4s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+              'scan': 'scan 3s ease-in-out infinite',
+              'privacy-flip': 'privacyFlip 4s ease-in-out infinite',
+              'batch-move': 'batchMove 3s ease-in-out infinite',
+              'bridge-flow': 'bridgeFlow 3s linear infinite',
+              'float-random': 'floatRandom 6s ease-in-out infinite',
+              'envelope-open': 'envelopeOpen 3s ease-in-out infinite',
+              'check-appear': 'checkAppear 3s ease-in-out infinite',
+              'lock-unlock': 'lockUnlock 3s ease-in-out infinite',
+              'coin-pop': 'coinPop 3s ease-in-out infinite',
+              'slide-up-fade': 'slideUpFade 0.5s ease-out forwards',
+              'scale-up-fade': 'scaleUpFade 0.6s ease-out forwards',
+            },
+            keyframes: {
+              floatUp: {
+                '0%': { transform: 'translateY(100vh) scale(0.8)', opacity: '0' },
+                '10%': { opacity: '0.08' },
+                '90%': { opacity: '0.08' },
+                '100%': { transform: 'translateY(-10vh) scale(1.2)', opacity: '0' },
+              },
+              'keyhole-sequence': {
+                '0%': { opacity: '0.15', filter: 'none', stroke: '#5BA7D9', strokeWidth: '0.5px' },
+                '15%': { opacity: '1', filter: 'url(#glow-bloom)', stroke: '#e0f2fe', strokeWidth: '0.8px' },
+                '40%': { opacity: '0.5', stroke: '#A8CFF7', strokeWidth: '0.6px' },
+                '100%': { opacity: '0.15', filter: 'none', stroke: '#5BA7D9', strokeWidth: '0.5px' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              slideUpFade: {
+                '0%': { opacity: '0', transform: 'translateY(30px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              scaleUpFade: {
+                '0%': { opacity: '0', transform: 'scale(0.95)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              scan: {
+                '0%, 100%': { transform: 'scale(0.8)', opacity: '0' },
+                '50%': { transform: 'scale(1.1)', opacity: '1' },
+              },
+              privacyFlip: {
+                '0%, 45%': { opacity: '1' },
+                '50%, 95%': { opacity: '0' },
+              },
+              batchMove: {
+                '0%': { transform: 'translate(0, 0)', opacity: '1' },
+                '50%': { transform: 'translate(var(--tx), var(--ty))', opacity: '0.5' },
+                '60%, 100%': { transform: 'translate(var(--tx), var(--ty))', opacity: '0' },
+              },
+              bridgeFlow: {
+                '0%': { strokeDashoffset: '24' },
+                '100%': { strokeDashoffset: '0' },
+              },
+              floatRandom: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              envelopeOpen: {
+                '0%, 10%': { transform: 'scaleY(1)', transformOrigin: 'top' },
+                '40%, 100%': { transform: 'scaleY(-1)', transformOrigin: 'top' }
+              },
+              checkAppear: {
+                '0%, 40%': { opacity: '0', transform: 'scale(0.5)' },
+                '60%, 90%': { opacity: '1', transform: 'scale(1)' },
+                '100%': { opacity: '0', transform: 'scale(1.1)' }
+              },
+              lockUnlock: {
+                '0%, 20%': { transform: 'translateY(0)' },
+                '40%, 100%': { transform: 'translateY(-4px)' } // shackle moves up
+              },
+              coinPop: {
+                '0%, 20%': { transform: 'translateY(10px) scale(0)', opacity: '0' },
+                '50%, 80%': { transform: 'translateY(-15px) scale(1)', opacity: '1' },
+                '100%': { transform: 'translateY(-20px) scale(1)', opacity: '0' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background-color: #09121D;
+        color: #E6EEF3;
+        overflow-x: hidden;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #09121D; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2b3036; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #3A8DFF; 
+      }
+      
+      /* Scroll offset for sticky header */
+      #features, #security, #how-it-works, #faq {
+        scroll-margin-top: 100px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.39.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
