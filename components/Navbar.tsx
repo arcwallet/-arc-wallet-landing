@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
 
   return (
     <header 
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#09121D]/90 backdrop-blur-[20px] border-b border-[rgba(160,188,228,0.08)] py-4 px-6 lg:px-16 shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#09121D]/90 backdrop-blur-[20px] border-b border-[rgba(160,188,228,0.08)] py-2 px-6 lg:px-16 shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
     >
       <div className="max-w-[1440px] mx-auto flex items-center justify-between">
         {/* Left: Logo Area */}
