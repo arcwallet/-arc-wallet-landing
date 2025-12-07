@@ -99,8 +99,10 @@ const Navbar: React.FC = () => {
             <span className="text-xs font-medium text-[#a0bce4] tracking-wide">Arc Testnet</span>
           </div>
 
-          <a 
+          <a
             href="https://app.arcwallet.network/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[#a0bce4] text-[#091325] px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ease-out shadow-[0_0_20px_rgba(160,188,228,0.3)] hover:shadow-[0_0_30px_rgba(160,188,228,0.5)] hover:scale-[1.02] active:scale-[0.98] active:duration-100 active:shadow-[0_0_10px_rgba(160,188,228,0.2)] focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[#a0bce4]/50 inline-block text-center"
           >
             Launch App
