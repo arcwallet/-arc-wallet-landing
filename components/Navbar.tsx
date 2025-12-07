@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
           <img
             src="/arcwalletloginlogo.png"
             alt="Arc Wallet"
-            className="h-10 w-auto group-hover:scale-105 transition-transform"
+            className="h-14 w-auto group-hover:scale-105 transition-transform"
           />
         </div>
         
