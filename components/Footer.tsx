@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
   return (
     <footer 
       ref={footerRef}
-      className={`border-t border-[#a0bce4]/10 bg-[#0A0F1A] pt-20 pb-10 transition-opacity duration-500 ease-out ${
+      className={`border-t border-[#2b3036]/20 bg-[#0A0F1A] pt-20 pb-10 transition-opacity duration-500 ease-out ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
