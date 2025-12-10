@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
             {/* Left Column - Brand */}
             <div className="lg:col-span-2 space-y-6">
               <img
-                src="/arcwalletloginlogo.png"
+                src="/arclogo.png"
                 alt="Arc Wallet"
                 className="h-12 w-auto"
               />

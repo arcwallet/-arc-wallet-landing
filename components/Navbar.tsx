@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
           aria-label="Arc Wallet Home"
         >
           <img
-            src="/arcwalletloginlogo.png"
+            src="/arclogo.png"
             alt="Arc Wallet"
             className="h-20 w-auto group-hover:scale-105 transition-transform"
           />
