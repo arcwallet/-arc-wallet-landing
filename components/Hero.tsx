@@ -197,10 +197,10 @@ const Hero: React.FC = () => {
           </h1>
           
           {/* Element 3: Subtitle */}
-          <p 
+          <p
             className="text-lg md:text-xl text-arc-text-secondary max-w-lg leading-relaxed animate-[fadeIn_0.5s_ease-out_0.3s_forwards] opacity-0 will-change-opacity"
           >
-            The first ERC-4337 smart wallet with passkey authentication. No seed phrases, just biometrics.
+            ERC-4337 + ERC-6900 smart wallet powered by Circle. Passkey authentication, no seed phrases.
           </p>
           
           {/* Element 4: Waitlist Form & Learn More */}

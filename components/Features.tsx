@@ -41,7 +41,7 @@ const Features: React.FC = () => {
             Purpose-built for Self-Custody
           </h2>
           <p className="text-[#A7B4C8] text-lg max-w-2xl mx-auto leading-relaxed">
-            Arc Wallet combines passkey security with smart contract flexibility to power the next generation of crypto wallets.
+            Arc Wallet combines Circle's modular wallet infrastructure with passkey security to power the next generation of self-custodial wallets.
           </p>
         </div>
 
@@ -107,7 +107,7 @@ const PasskeyCard = () => (
     <div className="p-6">
       <h3 className="text-xl font-semibold text-[#E6EEF3] mb-2">Passkey-First Security</h3>
       <p className="text-[#A7B4C8] text-sm leading-relaxed">
-        No seed phrases, no passwords. Sign with Face ID, Touch ID, or PIN. Keys never leave your device's secure enclave.
+        Powered by Circle's WebAuthn infrastructure. Sign with Face ID, Touch ID, or PIN. P256 keys verified on-chain.
       </p>
     </div>
   </div>
@@ -209,9 +209,9 @@ const SmartAccountsCard = () => (
        </div>
     </div>
     <div className="p-6">
-      <h3 className="text-xl font-semibold text-[#E6EEF3] mb-2">ERC-4337 Smart Accounts</h3>
+      <h3 className="text-xl font-semibold text-[#E6EEF3] mb-2">ERC-4337 + ERC-6900 Accounts</h3>
       <p className="text-[#A7B4C8] text-sm leading-relaxed">
-        Account abstraction with gas sponsorship and batch operations. Execute multiple transactions at once.
+        Modular Smart Contract Accounts (MSCA) with Circle's bundler and paymaster. Batch operations in a single UserOp.
       </p>
     </div>
   </div>
@@ -294,9 +294,9 @@ const BridgeCard = () => (
        </div>
     </div>
     <div className="p-6">
-      <h3 className="text-xl font-semibold text-[#E6EEF3] mb-2">Circle CCTP Bridge</h3>
+      <h3 className="text-xl font-semibold text-[#E6EEF3] mb-2">Circle CCTP V2 Bridge</h3>
       <p className="text-[#A7B4C8] text-sm leading-relaxed">
-        Seamlessly bridge USDC and EURC between Arc Network and Ethereum with native Circle integration.
+        Native burn-and-mint USDC bridging via Circle's CCTP. Fast transfers with Iris attestation service.
       </p>
     </div>
   </div>
@@ -345,9 +345,9 @@ const MultiSigCard = () => (
       `}</style>
     </div>
     <div className="p-6">
-      <h3 className="text-xl font-semibold text-[#E6EEF3] mb-2">Multi-Sig Wallets</h3>
+      <h3 className="text-xl font-semibold text-[#E6EEF3] mb-2">ERC-6900 Multi-Sig</h3>
       <p className="text-[#A7B4C8] text-sm leading-relaxed">
-        Create shared wallets with customizable approval thresholds for teams and organizations.
+        Weighted multi-signature via Circle's WeightedWebauthnMultisigPlugin. Enterprise-grade shared wallets.
       </p>
     </div>
   </div>

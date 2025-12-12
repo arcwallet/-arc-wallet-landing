@@ -10,27 +10,27 @@ interface FAQItem {
 const FAQ_ITEMS: FAQItem[] = [
   {
     question: "What makes Arc Wallet different from other wallets?",
-    answer: "Arc Wallet eliminates seed phrases entirely by using passkey authentication. Your keys are stored in your device's secure enclave, verified on-chain via P256 cryptography, and synced securely across your devices."
+    answer: "Arc Wallet is built on Circle's Modular Wallet SDK, combining ERC-4337 account abstraction with ERC-6900 modular plugins. No seed phrases - just passkey authentication with P256 signatures verified on-chain."
   },
   {
-    question: "How does passkey authentication work?",
-    answer: "When you create a wallet, your device generates a cryptographic key pair in its secure enclave. You authenticate using Face ID, Touch ID, or PIN. The private key never leaves your device. Transactions are signed locally and verified on-chain."
+    question: "How does Circle's passkey authentication work?",
+    answer: "Circle's WebAuthn infrastructure handles passkey creation and authentication. Your device generates a P256 key pair in its secure enclave. You sign with Face ID, Touch ID, or PIN. Circle's smart contracts verify signatures on-chain."
   },
   {
     question: "What happens if I lose my device?",
-    answer: "Your passkeys sync automatically via iCloud Keychain (Apple) or Google Password Manager (Android). If you lose a device, simply sign in from another synced device. You can also add multiple passkeys from different devices for extra security."
+    answer: "Your passkeys sync automatically via iCloud Keychain (Apple) or Google Password Manager (Android). Access your wallet from any synced device. For enterprise accounts, ERC-6900 multi-sig allows recovery via weighted threshold signatures."
   },
   {
     question: "How does configurable privacy work?",
     answer: "Arc Wallet offers opt-in privacy features that let you selectively shield transaction details and balances. You control what's visible and what's private, while maintaining the ability to prove compliance when needed."
   },
   {
-    question: "Can I use Arc Wallet for my team or organization?",
-    answer: "Yes. Arc Wallet supports multi-signature wallets with customizable approval thresholds. Create shared wallets that require multiple team members to approve transactions. Ideal for DAOs, treasuries, and business accounts."
+    question: "How does ERC-6900 multi-sig work?",
+    answer: "Using Circle's WeightedWebauthnMultisigPlugin, you can create shared wallets with weighted signature thresholds. Each signer has a weight, and transactions require signatures meeting the configured threshold. Ideal for DAOs and treasuries."
   },
   {
-    question: "What networks and assets are supported?",
-    answer: "Arc Wallet is built natively on Arc Network, supporting ARC, USDC, and EURC. You can bridge USDC and EURC to and from Ethereum using Circle's CCTP. Gas fees are paid in USDC, so no need to hold native tokens."
+    question: "What networks and how does bridging work?",
+    answer: "Arc Wallet runs on Arc Network with USDC as native gas. Circle's CCTP V2 enables native burn-and-mint USDC bridging to Ethereum Sepolia. Fast transfers complete in ~30 seconds via Iris attestation service."
   }
 ];
 

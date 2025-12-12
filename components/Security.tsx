@@ -27,26 +27,26 @@ const Security: React.FC = () => {
   const cards = [
     {
       icon: <ShieldCheckIcon className="w-6 h-6 text-[#a0bce4]" />,
-      title: "Device-Level Security",
-      description: "Keys never leave your device's secure enclave. Protected by the same hardware security used in Apple Pay and Google Pay.",
+      title: "Circle Infrastructure",
+      description: "Built on Circle's audited Modular Wallet SDK. Enterprise-grade security with ERC-4337 and ERC-6900 compliance.",
       delay: "0.1s"
     },
     {
       icon: <KeyOffIcon className="w-6 h-6 text-[#a0bce4]" />,
       title: "No Seed Phrases",
-      description: "Nothing to write down, nothing to steal. Passkeys eliminate the biggest vulnerability in traditional wallets.",
+      description: "WebAuthn passkeys via Circle. Nothing to write down, nothing to steal. Keys stay in your device's secure enclave.",
       delay: "0.2s"
     },
     {
       icon: <LinkIcon className="w-6 h-6 text-[#a0bce4]" />,
-      title: "On-Chain Verification",
-      description: "P256 cryptographic signatures verified directly on Arc Network. No trusted third parties, no intermediaries.",
+      title: "On-Chain P256 Verification",
+      description: "Cryptographic signatures verified directly by Circle's smart contracts. No trusted third parties.",
       delay: "0.3s"
     },
     {
       icon: <RefreshIcon className="w-6 h-6 text-[#a0bce4]" />,
-      title: "Multi-Device Recovery",
-      description: "Lose a device? Access your wallet from any of your synced devices. No recovery phrases, no support tickets.",
+      title: "Multi-Device Sync",
+      description: "Passkeys sync via iCloud Keychain or Google Password Manager. Access your wallet from any synced device.",
       delay: "0.4s"
     }
   ];
