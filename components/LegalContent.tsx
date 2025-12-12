@@ -17,14 +17,14 @@ export const TermsOfService: React.FC = () => (
       <li>Multi-Token Support (ARC, USDC, EURC)</li>
       <li>Transaction Execution</li>
     </ul>
-    <p className="text-arc-text-secondary leading-relaxed mb-4"><strong className="text-arc-text-main">Advanced Features:</strong></p>
+    <p className="text-arc-text-secondary leading-relaxed mb-4"><strong className="text-arc-text-main">Advanced Features (Circle Modular Wallet SDK):</strong></p>
     <ul className="list-disc list-inside text-arc-text-secondary mb-4 space-y-1">
-      <li>ERC-4337 Smart Accounts</li>
-      <li>Gasless Transactions (pay with USDC)</li>
-      <li>Batch Operations</li>
-      <li>Circle CCTP Bridge</li>
-      <li>Multi-Signature Wallets</li>
-      <li>Treasury Management</li>
+      <li>ERC-4337 + ERC-6900 Modular Smart Contract Accounts (MSCA)</li>
+      <li>Circle Bundler & Paymaster (gas sponsorship)</li>
+      <li>Batch Operations via UserOperations</li>
+      <li>Circle CCTP V2 Bridge with Iris attestation</li>
+      <li>ERC-6900 Multi-Sig (WeightedWebauthnMultisigPlugin)</li>
+      <li>Enterprise Treasury Management</li>
     </ul>
 
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">3. Self-Custodial Nature</h3>
@@ -49,12 +49,12 @@ export const TermsOfService: React.FC = () => (
     </ul>
 
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">5. Account and Passkey Security</h3>
-    <p className="text-arc-text-secondary leading-relaxed mb-4">Your passkey:</p>
+    <p className="text-arc-text-secondary leading-relaxed mb-4">Your passkey (via Circle's WebAuthn infrastructure):</p>
     <ul className="list-disc list-inside text-arc-text-secondary mb-4 space-y-1">
       <li>Is stored in your device's Secure Enclave</li>
-      <li>Is protected by biometric authentication</li>
-      <li>Never leaves your device</li>
-      <li>Cannot be extracted or exported</li>
+      <li>Uses P256 (secp256r1) cryptography</li>
+      <li>Signatures verified on-chain by Circle's smart contracts</li>
+      <li>Never leaves your device - only public key stored by Circle</li>
     </ul>
 
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">6. Transactions</h3>
@@ -71,16 +71,19 @@ export const TermsOfService: React.FC = () => (
       <li>Arc Wallet is not responsible for Circle service failures</li>
     </ul>
 
-    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">8. Multi-Signature Wallets</h3>
+    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">8. ERC-6900 Multi-Signature Wallets</h3>
     <ul className="list-disc list-inside text-arc-text-secondary mb-4 space-y-1">
-      <li>Customizable approval thresholds</li>
+      <li>Powered by Circle's WeightedWebauthnMultisigPlugin</li>
+      <li>Customizable weighted signature thresholds</li>
+      <li>Each signer has configurable weight (e.g., 100 per signer)</li>
+      <li>Transactions require signatures meeting threshold (e.g., 200 = 2 signers)</li>
       <li>All signers must agree to these Terms</li>
       <li>Arc Wallet cannot override multi-sig requirements</li>
     </ul>
 
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">9. Third-Party Services</h3>
     <p className="text-arc-text-secondary leading-relaxed mb-4">
-      Integrated services: Circle CCTP, RPC Providers, Blockscout API, Paymaster Services. Arc Wallet disclaims all liability for third-party service failures.
+      Integrated services: Circle Modular Wallet SDK, Circle Bundler & Paymaster, Circle CCTP V2, Circle Iris Attestation, RPC Providers, Blockscout API. Arc Wallet disclaims all liability for third-party service failures.
     </p>
 
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">10. Intellectual Property</h3>
@@ -166,17 +169,18 @@ export const PrivacyPolicy: React.FC = () => (
     </div>
 
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">3. Data That Stays On Your Device</h3>
-    <p className="text-arc-text-secondary leading-relaxed mb-4"><strong className="text-arc-text-main">Passkey Credentials:</strong></p>
+    <p className="text-arc-text-secondary leading-relaxed mb-4"><strong className="text-arc-text-main">Passkey Credentials (via Circle WebAuthn):</strong></p>
     <ul className="list-disc list-inside text-arc-text-secondary mb-4 space-y-1">
-      <li>Stored in Device Secure Enclave (iOS Keychain, Android Keystore)</li>
-      <li>Accessible only via biometric authentication</li>
+      <li>P256 (secp256r1) key pair generated in Device Secure Enclave</li>
+      <li>Private key never leaves the device - only public key registered with Circle</li>
+      <li>Accessible only via biometric authentication (Face ID, Touch ID, PIN)</li>
       <li>Cannot be extracted or exported</li>
     </ul>
-    <p className="text-arc-text-secondary leading-relaxed mb-4"><strong className="text-arc-text-main">Encrypted Private Keys:</strong></p>
+    <p className="text-arc-text-secondary leading-relaxed mb-4"><strong className="text-arc-text-main">Circle Smart Contract Account:</strong></p>
     <ul className="list-disc list-inside text-arc-text-secondary mb-4 space-y-1">
-      <li>AES-GCM 256-bit encryption</li>
-      <li>Non-extractable WebCrypto keys</li>
-      <li>Zero server-side access</li>
+      <li>ERC-4337 + ERC-6900 Modular Smart Contract Account (MSCA)</li>
+      <li>Signatures verified on-chain by Circle's smart contracts</li>
+      <li>No seed phrases - passkey is your only authentication method</li>
     </ul>
 
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">4. Optional Data Collection</h3>
@@ -187,12 +191,14 @@ export const PrivacyPolicy: React.FC = () => (
       <li><strong className="text-arc-text-main">Analytics:</strong> Anonymized error logs (opt-out available)</li>
     </ul>
 
-    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">5. Third-Party Services</h3>
+    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">5. Third-Party Services (Circle Infrastructure)</h3>
     <ul className="list-disc list-inside text-arc-text-secondary mb-4 space-y-1">
-      <li><strong className="text-arc-text-main">Circle CCTP:</strong> Transaction hash for bridge verification</li>
+      <li><strong className="text-arc-text-main">Circle Modular Wallet SDK:</strong> Passkey registration, authentication, wallet creation</li>
+      <li><strong className="text-arc-text-main">Circle Bundler:</strong> UserOperation submission and execution</li>
+      <li><strong className="text-arc-text-main">Circle Paymaster:</strong> Gas sponsorship for UserOperations</li>
+      <li><strong className="text-arc-text-main">Circle CCTP V2:</strong> Cross-chain USDC bridging with Iris attestation</li>
       <li><strong className="text-arc-text-main">RPC Providers:</strong> Transaction data (configurable)</li>
       <li><strong className="text-arc-text-main">Blockscout API:</strong> Public wallet address for balance queries</li>
-      <li><strong className="text-arc-text-main">Paymaster:</strong> UserOperation data for gas sponsorship</li>
     </ul>
 
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">6. Security Architecture</h3>
@@ -201,14 +207,15 @@ export const PrivacyPolicy: React.FC = () => (
         <thead>
           <tr className="border-b border-[#a0bce4]/20">
             <th className="text-left py-2 text-arc-text-main">Component</th>
-            <th className="text-left py-2 text-arc-text-main">Encryption</th>
+            <th className="text-left py-2 text-arc-text-main">Security</th>
           </tr>
         </thead>
         <tbody className="text-arc-text-secondary">
-          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Private Keys</td><td className="py-2">AES-GCM 256-bit</td></tr>
+          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Passkey Authentication</td><td className="py-2">Circle WebAuthn P256</td></tr>
           <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Passkey Storage</td><td className="py-2">Hardware Secure Enclave</td></tr>
+          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">On-Chain Verification</td><td className="py-2">Circle MSCA Smart Contracts</td></tr>
           <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Data in Transit</td><td className="py-2">TLS 1.3</td></tr>
-          <tr><td className="py-2">Session Tokens</td><td className="py-2">httpOnly Secure Cookies</td></tr>
+          <tr><td className="py-2">Session Management</td><td className="py-2">10-minute auto-expiry</td></tr>
         </tbody>
       </table>
     </div>
@@ -251,31 +258,38 @@ export const SecurityPolicy: React.FC = () => (
       <p className="text-arc-primary font-semibold">Security is the foundation of everything we build.</p>
     </div>
 
-    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">1. Security Architecture</h3>
-    <p className="text-arc-text-secondary leading-relaxed mb-4">Arc Wallet implements a multi-layered security model:</p>
+    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">1. Security Architecture (Circle Modular Wallet SDK)</h3>
+    <p className="text-arc-text-secondary leading-relaxed mb-4">Arc Wallet implements a multi-layered security model powered by Circle:</p>
     <div className="bg-[#0A0F1A] border border-[#a0bce4]/20 rounded-lg p-4 mb-4 font-mono text-xs text-arc-text-secondary">
       <div className="space-y-1">
         <p>┌─────────────────────────────────────┐</p>
         <p>│ USER LAYER - Biometric Auth         │</p>
         <p>├─────────────────────────────────────┤</p>
-        <p>│ PASSKEY LAYER - WebAuthn P256       │</p>
+        <p>│ CIRCLE WEBAUTHN - P256 Passkeys     │</p>
         <p>├─────────────────────────────────────┤</p>
-        <p>│ ENCRYPTION LAYER - AES-GCM 256-bit  │</p>
+        <p>│ CIRCLE MSCA - ERC-4337 + ERC-6900   │</p>
         <p>├─────────────────────────────────────┤</p>
-        <p>│ SMART CONTRACT - ERC-4337           │</p>
+        <p>│ CIRCLE BUNDLER & PAYMASTER          │</p>
         <p>├─────────────────────────────────────┤</p>
         <p>│ BLOCKCHAIN - Arc Network / Ethereum │</p>
         <p>└─────────────────────────────────────┘</p>
       </div>
     </div>
 
-    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">2. Passkey-First Security</h3>
-    <p className="text-arc-text-secondary leading-relaxed mb-4"><strong className="text-arc-text-main">No Seed Phrases:</strong> This eliminates:</p>
+    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">2. Circle Passkey-First Security</h3>
+    <p className="text-arc-text-secondary leading-relaxed mb-4"><strong className="text-arc-text-main">No Seed Phrases - Circle WebAuthn eliminates:</strong></p>
     <ul className="list-disc list-inside text-arc-text-secondary mb-4 space-y-1">
       <li>Phishing attacks targeting seed phrases</li>
       <li>Physical theft of written seed phrases</li>
       <li>Screenshot/clipboard malware attacks</li>
       <li>Social engineering for "recovery phrase verification"</li>
+    </ul>
+    <p className="text-arc-text-secondary leading-relaxed mb-4"><strong className="text-arc-text-main">Circle Passkey Flow:</strong></p>
+    <ul className="list-disc list-inside text-arc-text-secondary mb-4 space-y-1">
+      <li>Device generates P256 key pair in Secure Enclave</li>
+      <li>Public key registered with Circle's infrastructure</li>
+      <li>Signatures verified on-chain by Circle's MSCA contracts</li>
+      <li>Passkeys sync via iCloud Keychain or Google Password Manager</li>
     </ul>
 
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">3. Secure Enclave Storage</h3>
@@ -316,21 +330,23 @@ export const SecurityPolicy: React.FC = () => (
       </table>
     </div>
 
-    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">5. Smart Contract Security</h3>
+    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">5. Circle Smart Contract Security</h3>
     <ul className="list-disc list-inside text-arc-text-secondary mb-4 space-y-1">
-      <li><strong className="text-arc-text-main">Standard:</strong> ERC-4337 Account Abstraction</li>
-      <li><strong className="text-arc-text-main">Verification:</strong> On-chain P256 via RIP-7212 precompile</li>
+      <li><strong className="text-arc-text-main">Standard:</strong> ERC-4337 + ERC-6900 Modular Smart Contract Accounts (MSCA)</li>
+      <li><strong className="text-arc-text-main">Verification:</strong> On-chain P256 via Circle's audited smart contracts</li>
+      <li><strong className="text-arc-text-main">Plugins:</strong> ERC-6900 modular plugin architecture</li>
+      <li><strong className="text-arc-text-main">Multi-Sig:</strong> WeightedWebauthnMultisigPlugin for shared wallets</li>
       <li><strong className="text-arc-text-main">Deployment:</strong> CREATE2 deterministic addresses</li>
       <li><strong className="text-arc-text-main">Protection:</strong> Nonce-based replay prevention</li>
     </ul>
 
-    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">6. Backend Security</h3>
+    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">6. Infrastructure Security</h3>
     <ul className="list-disc list-inside text-arc-text-secondary mb-4 space-y-1">
-      <li>HTTPS enforced (TLS 1.3)</li>
-      <li>Strict CORS origin validation</li>
-      <li>Per-IP and per-user rate limiting</li>
-      <li>Input validation with express-validator</li>
-      <li>Helmet.js HTTP security headers</li>
+      <li><strong className="text-arc-text-main">Circle Infrastructure:</strong> Enterprise-grade Bundler & Paymaster</li>
+      <li><strong className="text-arc-text-main">HTTPS:</strong> TLS 1.3 enforced</li>
+      <li><strong className="text-arc-text-main">CORS:</strong> Strict origin validation</li>
+      <li><strong className="text-arc-text-main">Rate Limiting:</strong> Per-IP and per-user limits</li>
+      <li><strong className="text-arc-text-main">Headers:</strong> Secure HTTP headers</li>
     </ul>
 
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">7. Security Best Practices</h3>
