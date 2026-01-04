@@ -123,8 +123,6 @@ export const TermsOfService: React.FC = () => (
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">15. Contact</h3>
     <ul className="list-none text-arc-text-secondary mb-4 space-y-1">
       <li><strong className="text-arc-text-main">Support:</strong> support@arcwallet.network</li>
-      <li><strong className="text-arc-text-main">Legal:</strong> legal@arcwallet.network</li>
-      <li><strong className="text-arc-text-main">Security:</strong> security@arcwallet.network</li>
     </ul>
 
     <div className="mt-8 pt-6 border-t border-[#a0bce4]/20">
