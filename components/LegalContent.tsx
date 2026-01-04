@@ -154,14 +154,14 @@ export const PrivacyPolicy: React.FC = () => (
           </tr>
         </thead>
         <tbody className="text-arc-text-secondary">
-          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Seed Phrases</td><td className="py-2 text-green-400 font-semibold">Never</td></tr>
-          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Private Keys</td><td className="py-2 text-green-400 font-semibold">Never</td></tr>
-          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Wallet Passwords</td><td className="py-2 text-green-400 font-semibold">Never</td></tr>
-          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Transaction History</td><td className="py-2 text-green-400 font-semibold">No</td></tr>
-          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Wallet Balances</td><td className="py-2 text-green-400 font-semibold">No</td></tr>
-          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Personal ID</td><td className="py-2 text-green-400 font-semibold">No</td></tr>
-          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Location Data</td><td className="py-2 text-green-400 font-semibold">No</td></tr>
-          <tr><td className="py-2">IP Address Logs</td><td className="py-2 text-green-400 font-semibold">No</td></tr>
+          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Seed Phrases</td><td className="py-2 text-arc-text-main font-semibold">Never</td></tr>
+          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Private Keys</td><td className="py-2 text-arc-text-main font-semibold">Never</td></tr>
+          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Wallet Passwords</td><td className="py-2 text-arc-text-main font-semibold">Never</td></tr>
+          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Transaction History</td><td className="py-2 text-arc-text-main font-semibold">No</td></tr>
+          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Wallet Balances</td><td className="py-2 text-arc-text-main font-semibold">No</td></tr>
+          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Personal ID</td><td className="py-2 text-arc-text-main font-semibold">No</td></tr>
+          <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Location Data</td><td className="py-2 text-arc-text-main font-semibold">No</td></tr>
+          <tr><td className="py-2">IP Address Logs</td><td className="py-2 text-arc-text-main font-semibold">No</td></tr>
         </tbody>
       </table>
     </div>
@@ -194,7 +194,8 @@ export const PrivacyPolicy: React.FC = () => (
       <li><strong className="text-arc-text-main">Circle Modular Wallet SDK:</strong> Passkey registration, authentication, wallet creation</li>
       <li><strong className="text-arc-text-main">Circle Bundler:</strong> UserOperation submission and execution</li>
       <li><strong className="text-arc-text-main">Circle Paymaster:</strong> Gas sponsorship for UserOperations</li>
-      <li><strong className="text-arc-text-main">Circle CCTP V2:</strong> Cross-chain USDC bridging with Iris attestation</li>
+      <li><strong className="text-arc-text-main">Circle CCTP V2:</strong> Cross-chain USDC/EURC bridging with Iris attestation</li>
+      <li><strong className="text-arc-text-main">Circle StableFX:</strong> USDC ↔ EURC swap with institutional-grade FX rates</li>
       <li><strong className="text-arc-text-main">RPC Providers:</strong> Transaction data (configurable)</li>
       <li><strong className="text-arc-text-main">Blockscout API:</strong> Public wallet address for balance queries</li>
     </ul>
@@ -213,7 +214,7 @@ export const PrivacyPolicy: React.FC = () => (
           <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Passkey Storage</td><td className="py-2">Hardware Secure Enclave</td></tr>
           <tr className="border-b border-[#a0bce4]/10"><td className="py-2">On-Chain Verification</td><td className="py-2">Circle MSCA Smart Contracts</td></tr>
           <tr className="border-b border-[#a0bce4]/10"><td className="py-2">Data in Transit</td><td className="py-2">TLS 1.3</td></tr>
-          <tr><td className="py-2">Session Management</td><td className="py-2">10-minute auto-expiry</td></tr>
+          <tr><td className="py-2">Session Management</td><td className="py-2">15-minute auto-expiry</td></tr>
         </tbody>
       </table>
     </div>
@@ -221,7 +222,7 @@ export const PrivacyPolicy: React.FC = () => (
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">7. Your Rights</h3>
     <ul className="list-disc list-inside text-arc-text-secondary mb-4 space-y-1">
       <li><strong className="text-arc-text-main">Access:</strong> Request information about your data</li>
-      <li><strong className="text-arc-text-main">Deletion:</strong> Request deletion at privacy@arcwallet.network</li>
+      <li><strong className="text-arc-text-main">Deletion:</strong> Request deletion at support@arcwallet.network</li>
       <li><strong className="text-arc-text-main">Export:</strong> Export your public wallet data</li>
       <li><strong className="text-arc-text-main">Opt-Out:</strong> Disable optional analytics in settings</li>
     </ul>
@@ -238,8 +239,7 @@ export const PrivacyPolicy: React.FC = () => (
 
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">10. Contact</h3>
     <ul className="list-none text-arc-text-secondary mb-4 space-y-1">
-      <li><strong className="text-arc-text-main">Privacy Inquiries:</strong> privacy@arcwallet.network</li>
-      <li><strong className="text-arc-text-main">General Support:</strong> support@arcwallet.network</li>
+      <li><strong className="text-arc-text-main">Support:</strong> support@arcwallet.network</li>
     </ul>
 
     <div className="mt-8 pt-6 border-t border-[#a0bce4]/20">
