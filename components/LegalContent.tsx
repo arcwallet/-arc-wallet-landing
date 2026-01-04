@@ -250,14 +250,14 @@ export const PrivacyPolicy: React.FC = () => (
 
 export const SecurityPolicy: React.FC = () => (
   <div className="prose prose-invert prose-sm max-w-none">
-    <p className="text-arc-text-secondary text-sm mb-6">Last Updated: December 10, 2025</p>
+    <p className="text-arc-text-secondary text-sm mb-6">Last Updated: January 4, 2026</p>
 
     <div className="bg-[#a0bce4]/10 border border-[#a0bce4]/20 rounded-lg p-4 mb-6">
-      <p className="text-arc-primary font-semibold">Security is the foundation of everything we build.</p>
+      <p className="text-arc-text-main font-semibold">Arc Wallet is built with enterprise-grade security infrastructure powered by Circle's Modular Wallet SDK.</p>
     </div>
 
-    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">1. Security Architecture (Circle Modular Wallet SDK)</h3>
-    <p className="text-arc-text-secondary leading-relaxed mb-4">Arc Wallet implements a multi-layered security model powered by Circle:</p>
+    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">1. Security Architecture</h3>
+    <p className="text-arc-text-secondary leading-relaxed mb-4">Arc Wallet implements a defense-in-depth security model with multiple protection layers:</p>
     <div className="bg-[#0A0F1A] border border-[#a0bce4]/20 rounded-lg p-4 mb-4 font-mono text-xs text-arc-text-secondary">
       <div className="space-y-1">
         <p>┌─────────────────────────────────────┐</p>
@@ -328,12 +328,13 @@ export const SecurityPolicy: React.FC = () => (
       </table>
     </div>
 
-    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">5. Circle Smart Contract Security</h3>
+    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">5. Smart Contract Security</h3>
     <ul className="list-disc list-inside text-arc-text-secondary mb-4 space-y-1">
       <li><strong className="text-arc-text-main">Standard:</strong> ERC-4337 + ERC-6900 Modular Smart Contract Accounts (MSCA)</li>
-      <li><strong className="text-arc-text-main">Verification:</strong> On-chain P256 via Circle's audited smart contracts</li>
+      <li><strong className="text-arc-text-main">Audit:</strong> Circle smart contracts audited by Quantstamp</li>
+      <li><strong className="text-arc-text-main">Verification:</strong> On-chain P256 signature verification via MSCA</li>
       <li><strong className="text-arc-text-main">Plugins:</strong> ERC-6900 modular plugin architecture</li>
-      <li><strong className="text-arc-text-main">Multi-Sig:</strong> WeightedWebauthnMultisigPlugin for shared wallets</li>
+      <li><strong className="text-arc-text-main">Multi-Sig:</strong> WeightedWebauthnMultisigPlugin with weighted threshold signatures</li>
       <li><strong className="text-arc-text-main">Deployment:</strong> CREATE2 deterministic addresses</li>
       <li><strong className="text-arc-text-main">Protection:</strong> Nonce-based replay prevention</li>
     </ul>
@@ -341,10 +342,11 @@ export const SecurityPolicy: React.FC = () => (
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">6. Infrastructure Security</h3>
     <ul className="list-disc list-inside text-arc-text-secondary mb-4 space-y-1">
       <li><strong className="text-arc-text-main">Circle Infrastructure:</strong> Enterprise-grade Bundler & Paymaster</li>
-      <li><strong className="text-arc-text-main">HTTPS:</strong> TLS 1.3 enforced</li>
+      <li><strong className="text-arc-text-main">Session Management:</strong> 15-minute automatic session expiry</li>
+      <li><strong className="text-arc-text-main">Cross-Chain:</strong> Circle CCTP V2 with Iris attestation for secure bridging</li>
+      <li><strong className="text-arc-text-main">Transport:</strong> TLS 1.3 enforced for all communications</li>
       <li><strong className="text-arc-text-main">CORS:</strong> Strict origin validation</li>
-      <li><strong className="text-arc-text-main">Rate Limiting:</strong> Per-IP and per-user limits</li>
-      <li><strong className="text-arc-text-main">Headers:</strong> Secure HTTP headers</li>
+      <li><strong className="text-arc-text-main">Rate Limiting:</strong> Per-IP and per-user request limits</li>
     </ul>
 
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">7. Security Best Practices</h3>
@@ -358,16 +360,19 @@ export const SecurityPolicy: React.FC = () => (
       <li>Beware of phishing sites</li>
     </ul>
 
-    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">8. Vulnerability Reporting</h3>
+    <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">8. Vulnerability Disclosure</h3>
+    <p className="text-arc-text-secondary leading-relaxed mb-4">
+      We take security vulnerabilities seriously. If you discover a potential security issue, please report it responsibly.
+    </p>
     <div className="bg-[#a0bce4]/10 border border-[#a0bce4]/20 rounded-lg p-4 mb-4">
       <p className="text-arc-text-main font-semibold mb-2">Report Security Issues:</p>
-      <p className="text-arc-primary">security@arcwallet.network</p>
+      <p className="text-arc-primary">support@arcwallet.network</p>
     </div>
     <p className="text-arc-text-secondary leading-relaxed mb-4"><strong className="text-arc-text-main">Response Timeline:</strong></p>
     <ul className="list-disc list-inside text-arc-text-secondary mb-4 space-y-1">
       <li>Acknowledgment: Within 48 hours</li>
       <li>Initial Assessment: Within 7 days</li>
-      <li>Resolution Target: 30-90 days</li>
+      <li>Resolution Target: 30-90 days (severity dependent)</li>
     </ul>
 
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">9. If You Suspect Compromise</h3>
@@ -382,8 +387,7 @@ export const SecurityPolicy: React.FC = () => (
 
     <h3 className="text-lg font-semibold text-arc-text-main mt-8 mb-4">10. Contact</h3>
     <ul className="list-none text-arc-text-secondary mb-4 space-y-1">
-      <li><strong className="text-arc-text-main">Security Team:</strong> security@arcwallet.network</li>
-      <li><strong className="text-arc-text-main">General Support:</strong> support@arcwallet.network</li>
+      <li><strong className="text-arc-text-main">Support:</strong> support@arcwallet.network</li>
     </ul>
 
     <div className="mt-8 pt-6 border-t border-[#a0bce4]/20">
